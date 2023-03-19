@@ -1,6 +1,5 @@
 var jsonparse = require('cog/jsonparse');
 var EventEmitter = require('events').EventEmitter;
-var FastMap = require('collections/fast-map');
 var not = require('whisk/not');
 
 /**
@@ -22,7 +21,7 @@ var not = require('whisk/not');
 **/
 module.exports = function(opts) {
   var board = new EventEmitter();
-  var rooms = board.rooms = new FastMap();
+  var rooms = board.rooms = new Map();
   var logger = (opts || {}).logger || console;
 
   function connect() {
